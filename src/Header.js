@@ -1,16 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function Header() {
-    return(
-        <div>
-            <header>
-                <ul>
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/#stream">Stream</a></li>
-                    <li><a href="/#contact">Contact</a></li>
-                </ul>
-            </header>
-        </div>
+    return (
+        <ul>
+            <li>
+                <Link to="/">Accueil</Link>
+            </li>
+            <li>
+                <Link to="/stream">Stream</Link>
+            </li>
+            <li>
+                <Link to="/contact">Contact</Link>
+            </li>
+        </ul>
     )
 }
 

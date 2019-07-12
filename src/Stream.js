@@ -2,20 +2,20 @@ import React from 'react';
 
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
-class Stream extends React.Component{
-    constructor(props){
+class Stream extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            targetID : 'twitch-embed',
-            width : 940,
-            height : 480,
-            channel : 'loufokalov',
-            theme : 'dark',
-            layout : 'video'
+            targetID: 'twitch-embed',
+            width: 940,
+            height: 480,
+            channel: 'loufokalov',
+            theme: 'dark',
+            layout: 'video'
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let embed;
         const script = document.createElement('script');
         script.setAttribute(
@@ -28,11 +28,11 @@ class Stream extends React.Component{
         document.body.appendChild(script);
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div id="twitch-embed">
-            <p>Bienvenue sur les lives de Nemesis</p>
-        </div>
+                <p>Bienvenue sur les lives de Nemesis</p>
+            </div>
         )
     }
 }
