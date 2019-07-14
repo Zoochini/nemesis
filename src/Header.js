@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Nav, Navbar } from 'react-bootstrap';
+
 
 function Header() {
     return (
-        <ul>
-            <li>
+        <Navbar bg="light" variant="light">
+            <Navbar.Brand>
                 <Link to="/">Accueil</Link>
-            </li>
-            <li>
+            </Navbar.Brand> 
+            <Nav className="mr-auto">
                 <Link to="/stream">Stream</Link>
-            </li>
-            <li>
                 <Link to="/contact">Contact</Link>
-            </li>
-        </ul>
+            </Nav>
+        </Navbar>
     )
 }
 
