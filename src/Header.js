@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Nav, Navbar, NavLink } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
             <Navbar.Brand>
                 <Link to="/">Accueil</Link>
             </Navbar.Brand>
-            <Nav justify="true">
+            <Nav justify>
                 <Nav.Link>
                     <Link to="/stream">Stream</Link>
                 </Nav.Link>

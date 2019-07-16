@@ -9,19 +9,21 @@ import './App.css';
 
 function App() {
   return (
-    <div className = "App">
+    <div className="App">
       <Router>
-        <div className ="NavBar">
+        <div className="NavBar">
           <Header />
 
           <hr />
 
-          <Route exact path="/" component = {Accueil} />
-          <Route path="/stream" component = {Stream} />
-          <Route path="/contact" component = {Contact} />
+          <Route exact path="/" component={Accueil} />
+          <Route path="/stream" component={Stream} />
+          <Route path="/contact" component={Contact} />
         </div>
       </Router>
+
       <Footer />
+
     </div>
   );
 }
