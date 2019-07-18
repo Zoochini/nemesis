@@ -14,8 +14,6 @@ function App() {
         <div className="NavBar">
           <Header />
 
-          <hr />
-
           <Route exact path="/" component={Accueil} />
           <Route path="/stream" component={Stream} />
           <Route path="/contact" component={Contact} />
@@ -23,7 +21,6 @@ function App() {
       </Router>
 
       <Footer />
-
     </div>
   );
 }

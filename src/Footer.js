@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Image } from 'react-bootstrap';
 
 function Footer() {
     return (
@@ -10,12 +10,12 @@ function Footer() {
                     <Nav>
                         <Nav.Item>
                             <Nav.Link href="https://www.facebook.com/N%C3%A9m%C3%A9sis-1582053825444049/">
-                                <img src="//logo.clearbit.com/facebook.com?size=32" alt="facebook"></img>
+                                <Image src="//logo.clearbit.com/facebook.com?size=32&greyscale=true" alt="facebook" roundedCircle></Image>
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link href="https://twitter.com/NemesisproCM">
-                                <img src="//logo.clearbit.com/twitter.com?size=32" alt="twitter"></img>
+                                <Image src="//logo.clearbit.com/twitter.com?size=32&greyscale=true" alt="twitter" roundedCircle></Image>
                             </Nav.Link>
                         </Nav.Item>
                     </Nav>
