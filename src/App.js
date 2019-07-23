@@ -6,6 +6,7 @@ import Stream from './Stream';
 import Accueil from './Accueil';
 import Contact from './Contact';
 import './App.css';
+import Loading from './Loading';
 
 function App() {
   return (
@@ -13,10 +14,13 @@ function App() {
       <Router>
         <div className="NavBar">
           <Header />
+        </div>
+        <div id="content">
 
           <Route exact path="/" component={Accueil} />
           <Route path="/stream" component={Stream} />
           <Route path="/contact" component={Contact} />
+
         </div>
       </Router>
 

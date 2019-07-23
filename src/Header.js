@@ -5,7 +5,7 @@ import { Nav, Navbar, Image } from 'react-bootstrap';
 
 function Header() {
     return (
-        <Navbar bg="light" variant="dark" className="justify-content-center">
+        <Navbar bg="light" variant="dark" className="justify-content-center" sticky="top">
             <Navbar.Brand>
                 <Link to="/"><Image id="button-logo" src="/nemesis-logo.svg" alt="Accueil" width="32" height="32"></Image></Link>
             </Navbar.Brand>
@@ -15,6 +15,9 @@ function Header() {
                 </Nav.Link>
                 <Nav.Link>
                     <Link to="/contact" className="text-danger">Contact</Link>
+                </Nav.Link>
+                <Nav.Link>
+                    <Link to="/loading" className="text-danger">loading</Link>
                 </Nav.Link>
             </Nav>
         </Navbar>
