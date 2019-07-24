@@ -1,18 +1,37 @@
+:root{
+  --main-text-color: red;
+  --main-background-color: ghostwhite;
+}
+
 .App {
   text-align: center;
+  font-family: 'Iceberg', serif;
 }
 
 body{
-  background-image: url("nemesis-background.svg");
-  background-color: ghostwhite;
+  background-image: url("resources/nemesis-background.svg");
+  background-color: var(--main-background-color);
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center top;
   fill-opacity: 0.1;
 }
 
+footer{
+  display:inline-flex;
+}
+
 .container{
   width: 100%;
+}
+
+.navbar{
+  color: var(--main-text-color);
+  justify-content: center;
+}
+
+.navbar-brand{
+  margin-right: inherit;
 }
 
 .carousel{

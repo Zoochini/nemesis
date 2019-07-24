@@ -12,16 +12,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="NavBar">
-          <Header />
-        </div>
-        <div id="content">
 
-          <Route exact path="/" component={Accueil} />
-          <Route path="/stream" component={Stream} />
-          <Route path="/contact" component={Contact} />
+        <Route exact path="/" component={Accueil} />
+        <Header />
 
-        </div>
+        <Route path="/stream" component={Stream} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/testRoom" component={Contact} />
       </Router>
 
       <Footer />
