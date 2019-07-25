@@ -2,21 +2,12 @@ import React from 'react';
 import { Jumbotron, Container, Row, Col, Carousel, Image } from 'react-bootstrap';
 
 function Accueil() {
-    const widthCarousel = 1200;
-    const heightCarousel = 600;
+    const widthCarousel = window.innerWidth;
+    const heightCarousel = window.innerHeight;
 
     return (
         <div>
             <Container fluid>
-                <Row className="justify-content-center">
-                    <Col>
-                        <Jumbotron>
-                            <h1>Bienvenue sur Nemesis</h1>
-                            <hr />
-                            <p>Petite présentation du site ( ou au coeurs des ptits fours)</p>
-                        </Jumbotron>
-                    </Col>
-                </Row>
                 <Row className="justify-content-center">
                     <Carousel>
                         <Carousel.Item>

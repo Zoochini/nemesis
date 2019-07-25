@@ -5,7 +5,7 @@ function Footer() {
     return (
         <Container fluid>
             <footer>
-                <Navbar bg="light" variant="light" fixed="bottom">
+                <Navbar bg="light" variant="light" >
                     <Nav className="mr-auto"></Nav>
                     <Nav>
                         <Nav.Item>

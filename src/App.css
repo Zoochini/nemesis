@@ -1,20 +1,27 @@
 :root{
-  --main-text-color: red;
+  --main-text-color: rgb(245, 0, 0);
   --main-background-color: ghostwhite;
 }
 
 .App {
   text-align: center;
   font-family: 'Iceberg', serif;
+  font-size: 2.0em;
 }
 
 body{
+  color: var(--main-text-color);
   background-image: url("resources/nemesis-background.svg");
   background-color: var(--main-background-color);
-  background-size: 50%;
+  background-size: 600px 600px;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: 50% -50%;
+  background-attachment: scroll;
   fill-opacity: 0.1;
+}
+
+a{
+  color: var(--main-text-color);
 }
 
 footer{
@@ -28,14 +35,26 @@ footer{
 .navbar{
   color: var(--main-text-color);
   justify-content: center;
+  border-bottom: 1px double rgba(0, 0, 0, 0.1);
+  font-size: 0.7em;
 }
 
 .navbar-brand{
+  color: inherit;
   margin-right: inherit;
 }
 
+.nav{
+  color: var(--main-text-color);
+}
+
+.nav-link{
+  color: inherit;
+}
+
 .carousel{
-  width: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-item{

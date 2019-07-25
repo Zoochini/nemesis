@@ -5,17 +5,16 @@ import { Nav, Navbar, Image, Container } from 'react-bootstrap';
 
 function Header() {
     return (
-        <Navbar bg="light" variant="dark" className="justify-content-center" sticky="top">
+        <Navbar bg="light" variant="dark" className="justify-content-center" sticky="top" expand="lg">
             <Nav>
                 <Nav.Link>
-                    <Link to="/stream" className="text-danger">Stream</Link>
+                    <Link to="/stream">Stream</Link>
                 </Nav.Link>
             </Nav>
             <Navbar.Brand>
                 <Link to="/">
                     <Image
                         id="button-logo"
-                        className="d-inline-block align-top"
                         src="/nemesis-logo.svg"
                         alt="Accueil"
                         width="32"
@@ -26,10 +25,10 @@ function Header() {
             </Navbar.Brand>
             <Nav>
                 <Nav.Link>
-                    <Link to="/contact" className="text-danger">Contact</Link>
+                    <Link to="/contact">Contact</Link>
                 </Nav.Link>
                 <Nav.Link>
-                    <Link to="/testRoom" className="text-danger">Test-Room</Link>
+                    <Link to="/testRoom">Test-Room</Link>
                 </Nav.Link>
             </Nav>
         </Navbar>
