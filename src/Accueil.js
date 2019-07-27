@@ -24,15 +24,15 @@ class Accueil extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="Accueil-lg">
                 <Container fluid>
-                    <Row className="justify-content-center">
+                    <Row>
                         <Carousel>
                             <Carousel.Item>
                                 <Image src="/nemesis-ban.svg" alt="First Slide" width={this.state.widthCarousel} height={this.state.heightCarousel}></Image>
                                 <Carousel.Caption>
                                     <h3>Bienvenue</h3>
-                                    <p>Au coeur des petits four</p>
+                                    <p>Au coeur des petits fours</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>

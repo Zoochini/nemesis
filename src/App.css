@@ -47,7 +47,8 @@ a{
 }
 
 .carousel{
-  background-color: var(--main-background-color);
+  background-color: grey;
+  width: 100%;
 }
 
 
