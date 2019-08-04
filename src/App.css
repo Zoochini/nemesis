@@ -24,11 +24,12 @@ body{
 
 a{
   color: var(--main-text-color);
+  text-align: left;
 }
 
 .navbar{
   color: var(--main-text-color);
-  justify-content: center;
+  justify-content: left;
   border-bottom: 1px double rgba(0, 0, 0, 0.1);
   font-size: 0.7em;
 }
@@ -47,7 +48,6 @@ a{
 }
 
 .carousel{
-  background-color: grey;
   width: 100%;
 }
 
