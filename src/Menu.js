@@ -10,10 +10,11 @@ class Menu extends React.Component {
             navExpanded: false
         }
         this.updateNavExpanded = this.updateNavExpanded.bind(this);
+        this.updateScrollShadow = this.updateScrollShadow.bind(this);
     }
 
     updateNavExpanded() {
-        this.setState((state) => ({ navExpanded: !state.navExpanded }));
+        this.setState((prevState, props) => ({ navExpanded: !prevState.navExpanded}));
         let reverse = this.state.navExpanded ? 'reverse' : 'normal';
         let animation = [
             { transform: 'rotate(0deg)' },
@@ -26,12 +27,31 @@ class Menu extends React.Component {
             iteration: 1
         }
         );
+        //Ici on inverse la valeur de this.state à cause du caractère asynchrone de l'appel de setState() en début de fonction
+        document.getElementById("menu").style.boxShadow = !this.state.navExpanded ? '0px 0px 0px 100vmax rgba(89, 89, 89, 0.20)' : window.scrollY !== 0 ? '0px 5px 8px #888888' : '';
+    }
+
+    updateScrollShadow(){
+        if(!this.state.navExpanded){
+            document.getElementById("menu").style.boxShadow = window.scrollY !== 0 ? '0px 5px 8px #888888' : '';
+        }else{
+            document.getElementById("menu").style.boxShadow = '0px 0px 0px 100vmax rgba(89, 89, 89, 0.20)';
+        }
+    }
+
+    componentDidMount(){
+        document.addEventListener('scroll', this.updateScrollShadow);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener('scroll', this.updateScrollShadow);
     }
 
     render() {
         return (
-            <Navbar bg="light" variant="dark" className="justify-content-left" fixed="top"
-                expand="lg" onToggle={this.updateNavExpanded} expanded={this.state.navExpanded}>
+            <Navbar id="menu" bg="light" variant="dark" className="justify-content" fixed="top"
+                expand="lg" onToggle={this.updateNavExpanded} expanded={this.state.navExpanded}
+                onSelect={this.updateNavExpanded}>
                 <Navbar.Toggle children={<Image
                     id="button-logo1"
                     src="/nemesis-logo.svg"
@@ -53,6 +73,14 @@ class Menu extends React.Component {
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                <Nav></Nav>
+                <Navbar.Brand>
+                    <Image
+                        src="/nemesis-ban.svg"
+                        width="80"
+                        height="auto">
+                    </Image>
+                </Navbar.Brand>
             </Navbar>
         )
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Container, Row, Col, Carousel, Image } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Image } from 'react-bootstrap';
 
 class Accueil extends React.Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class Accueil extends React.Component {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <Image src="/nemesis-logo.svg" alt="Second Slide" width={this.state.widthCarousel} height={this.state.heightCarousel}></Image>S
+                                <Image src="/nemesis-logo.svg" alt="Second Slide" width={this.state.widthCarousel} height={this.state.heightCarousel}></Image>
                             <Carousel.Caption>
                                     <h3>Second slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

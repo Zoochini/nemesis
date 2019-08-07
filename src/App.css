@@ -15,7 +15,7 @@ body{
   color: var(--main-text-color);
   background-image: url("resources/nemesis-background.svg");
   background-color: var(--main-background-color);
-  background-size: 600px 600px;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: 50% -50%;
   background-attachment: scroll;
@@ -30,7 +30,6 @@ a{
 .navbar{
   color: var(--main-text-color);
   justify-content: left;
-  border-bottom: 1px double rgba(0, 0, 0, 0.1);
   font-size: 0.7em;
 }
 
