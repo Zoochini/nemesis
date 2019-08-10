@@ -1,52 +1,39 @@
 import React from 'react';
-import { Container, Row, Col, Carousel, Image } from 'react-bootstrap';
+import { Container, Row, Carousel, Image } from 'react-bootstrap';
 
 class Accueil extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            widthCarousel: window.innerWidth,
-            heightCarousel: window.innerHeight
-        }
-    }
-
-    componentDidMount(){
-        this.timerID = setInterval(
-            () => this.updateCarouselSize(),
-            10
-        );
-    }
-
-    updateCarouselSize(){
-        this.setState({widthCarousel : window.innerWidth});
-        this.setState({heightCarousel : window.innerHeight});
-    }
 
     render() {
         return (
-            <div id="Accueil-lg">
+            <div id="Accueil">
                 <Container fluid>
                     <Row>
                         <Carousel>
                             <Carousel.Item>
-                                <Image src="/nemesis-ban.svg" alt="First Slide" width={this.state.widthCarousel} height={this.state.heightCarousel}></Image>
+                                <Image src="/nemesis-ban.svg" alt="First Slide"
+                                    width={this.props.width} height={this.props.height}>
+                                </Image>
                                 <Carousel.Caption>
                                     <h3>Bienvenue</h3>
                                     <p>Au coeur des petits fours</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <Image src="/nemesis-logo.svg" alt="Second Slide" width={this.state.widthCarousel} height={this.state.heightCarousel}></Image>
-                            <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <Image src="/twitch-logo.svg" alt="Second Slide"
+                                    width={this.props.width} height={this.props.height}>
+                                </Image>
+                                <Carousel.Caption>
+                                    <h3>Stream</h3>
+                                    <p>Allez voir ça coûte rien</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <Image src="/nemesis-logo.svg" alt="Third Slide" width={this.state.widthCarousel} height={this.state.heightCarousel}></Image>
+                                <Image src="/nemesis-logo.svg" alt="Third Slide"
+                                    width={this.props.width} height={this.props.height}>
+                                </Image>
                                 <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h3>Nous contacter</h3>
+                                    <p>Parce qu'il le faut bien</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>

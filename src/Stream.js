@@ -1,4 +1,5 @@
 import React from 'react';
+import { ResponsiveEmbed } from 'react-bootstrap';
 
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
@@ -11,11 +12,10 @@ class Stream extends React.Component {
             height: 480,
             channel: 'loufokalov',
             theme: 'dark',
-            layout: 'video'
         };
     }
-
     componentDidMount() {
+        // eslint-disable-next-line no-unused-vars
         let embed;
         const script = document.createElement('script');
         script.setAttribute(
@@ -30,8 +30,10 @@ class Stream extends React.Component {
 
     render() {
         return (
-            <div id="twitch-embed">
-                <p>Bienvenue sur les lives de Nemesis</p>
+            <div>
+                <ResponsiveEmbed aspectRatio="21by9"
+                    children={<div id="twitch-embed"></div>}>
+                </ResponsiveEmbed>
             </div>
         )
     }

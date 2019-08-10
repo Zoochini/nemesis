@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Nav, Navbar, Image, Container } from 'react-bootstrap';
+import { Nav, Navbar, Image } from 'react-bootstrap';
 
 class Header extends React.Component {
 
@@ -25,9 +25,9 @@ class Header extends React.Component {
         return (
             <Navbar id="menu" bg="light" variant="dark" className="justify-content-center" sticky="top" expand="lg">
                 <Nav>
-                    <Nav.Link>
+                    <Nav.Item>
                         <Link to="/stream">Stream</Link>
-                    </Nav.Link>
+                    </Nav.Item>
                 </Nav>
                 <Navbar.Brand>
                     <Link to="/">
@@ -42,12 +42,12 @@ class Header extends React.Component {
                     </Link>
                 </Navbar.Brand>
                 <Nav>
-                    <Nav.Link>
+                    <Nav.Item>
                         <Link to="/contact">Contact</Link>
-                    </Nav.Link>
-                    <Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
                         <Link to="/testRoom">Test-Room</Link>
-                    </Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </Navbar>
         )

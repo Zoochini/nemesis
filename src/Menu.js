@@ -49,7 +49,7 @@ class Menu extends React.Component {
 
     render() {
         return (
-            <Navbar id="menu" bg="light" variant="dark" className="justify-content" fixed="top"
+            <Navbar id="menu" bg="light" variant="dark" className="justify-content-left" sticky="top"
                 expand="lg" onToggle={this.updateNavExpanded} expanded={this.state.navExpanded}
                 onSelect={this.updateNavExpanded}>
                 <Navbar.Toggle children={<Image
@@ -62,15 +62,15 @@ class Menu extends React.Component {
                 </Image>} />
                 <Navbar.Collapse>
                     <Nav>
-                        <Nav.Link>
+                        <Nav.Item>
                             <Link to="/">Accueil</Link>
-                        </Nav.Link>
-                        <Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
                             <Link to="/stream">Stream</Link>
-                        </Nav.Link>
-                        <Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
                             <Link to="/contact">Contact</Link>
-                        </Nav.Link>
+                        </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
                 <Nav></Nav>
