@@ -22,6 +22,10 @@ a{
   text-align: left;
 }
 
+p{
+  font-size: 1.0em;
+}
+
 .navbar{
   color: var(--main-text-color);
   justify-content: left;

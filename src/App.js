@@ -18,11 +18,11 @@ class App extends React.Component {
     this.updateSize = this.updateSize.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     window.addEventListener('resize', this.updateSize);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener('resize', this.updateSize);
   }
 
@@ -38,10 +38,12 @@ class App extends React.Component {
       <div className="App">
         <Router>
 
+          <MenuSelecter />
+
           <Route exact path="/"
             render={() =>
               <Accueil width={this.state.screenWidth} height={this.state.screenHeight} />} />
-          <MenuSelecter />
+
 
           <Route path="/stream" component={Stream} />
           <Route path="/contact" component={Contact} />

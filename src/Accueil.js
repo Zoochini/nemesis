@@ -1,7 +1,36 @@
 import React from 'react';
-import { Container, Row, Carousel, Image } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Image } from 'react-bootstrap';
 
 class Accueil extends React.Component {
+    constructor(props){
+        super(props);
+        this.updateMenu = this.updateMenu.bind(this);
+    }
+
+    componentDidMount(){
+        let menu = document.getElementById("menu").style;
+        menu.visibility = 'hidden';
+        menu.display = 'none';
+        document.addEventListener("scroll", this.updateMenu);
+    }
+
+    componentWillUnmount(){
+        let menu = document.getElementById("menu").style;
+        menu.visibility = 'visible';
+        menu.display = 'flex';
+        document.removeEventListener("scroll", this.updateMenu);
+    }
+
+    updateMenu(){
+        let menu = document.getElementById("menu").style;
+        if(window.scrollY !== 0){
+            menu.visibility = 'visible';
+            menu.display = 'flex';
+        }else{
+            menu.visibility = 'hidden';
+            menu.display = 'none';
+        }
+    }
 
     render() {
         return (
