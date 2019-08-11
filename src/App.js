@@ -15,10 +15,15 @@ class App extends React.Component {
       screenWidth: window.innerWidth,
       screenHeight: window.innerHeight
     }
+    this.updateSize = this.updateSize.bind(this);
   }
 
-  componentDidMount() {
-    this.timerID = setInterval(() => this.updateSize(), 200);
+  componentDidMount(){
+    window.addEventListener('resize', this.updateSize);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.updateSize);
   }
 
   updateSize() {
@@ -27,7 +32,6 @@ class App extends React.Component {
       screenHeight: window.innerHeight
     })
   }
-
 
   render() {
     return (
