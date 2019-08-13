@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Menu from './Menu';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Nav, Navbar, Image, Container } from 'react-bootstrap';
+import { Nav, Navbar, Image, Container, Row, Col } from 'react-bootstrap';
 
 class MenuSelecter extends React.Component {
 
@@ -22,13 +22,13 @@ class MenuSelecter extends React.Component {
     }
 
     updateMenu() {
-        this.setState({width : window.innerWidth});
+        this.setState({ width: window.innerWidth });
     }
 
 
     render() {
         return (
-            this.state.width >= 720 ? <Header /> : <Menu />
+            this.state.width >= 720 ? <Header /> : <Menu /> 
         )
     }
 }

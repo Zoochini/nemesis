@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 import Footer from './Footer';
 import Stream from './Stream';
 import Accueil from './Accueil';
@@ -40,17 +41,22 @@ class App extends React.Component {
 
           <MenuSelecter />
 
-          <Route exact path="/"
-            render={() =>
-              <Accueil width={this.state.screenWidth} height={this.state.screenHeight} />} />
+          <Container id="content" fluid>
+
+            <Route exact path="/"
+              render={() =>
+                <Accueil width={this.state.screenWidth} height={this.state.screenHeight} />} />
 
 
-          <Route path="/stream" component={Stream} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/testRoom" component={Menu} />
+            <Route path="/stream" component={Stream} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/testRoom" component={Menu} />
+
+          </Container>
+
+          <Footer />
+
         </Router>
-
-        <Footer />
       </div>
     );
   }

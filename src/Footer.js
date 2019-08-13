@@ -5,8 +5,8 @@ function Footer() {
     return (
         <Container id="footer" fluid>
             <Row>
-                <Col></Col>
-                <Col xs="auto, order: 12">
+                <Col xs={{ span: 6, offset: 3 }}>
+                    <p>Suivez-nous :</p>
                     <a href="https://www.facebook.com/N%C3%A9m%C3%A9sis-1582053825444049/">
                         <Image src="//logo.clearbit.com/facebook.com?size=28&greyscale=true" alt="facebook" roundedCircle></Image>
                     </a>
@@ -16,6 +16,7 @@ function Footer() {
                 </Col>
             </Row>
         </Container>
+
     )
 }
 

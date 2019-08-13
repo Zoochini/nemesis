@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResponsiveEmbed } from 'react-bootstrap';
+import { ResponsiveEmbed, Row } from 'react-bootstrap';
 
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
@@ -30,11 +30,11 @@ class Stream extends React.Component {
 
     render() {
         return (
-            <div>
+            <Row>
                 <ResponsiveEmbed aspectRatio="21by9"
                     children={<div id="twitch-embed"></div>}>
                 </ResponsiveEmbed>
-            </div>
+            </Row>
         )
     }
 }
