@@ -3,7 +3,7 @@
   --main-background-color: ghostwhite;
   --second-text-color: rgb(134, 0, 0);
   --second-background-color: rgb(100, 0, 0);
-  --third-text-color: rgb(15, 15, 15);
+  --third-text-color: rgb(230, 230, 230);
 }
 
 .App {
@@ -54,6 +54,45 @@ p{
 
 .carousel-caption{
   color: var(--second-text-color);
+  width: 100%;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#slide1 .carousel-caption{
+  background-color: rgba(95, 95, 95, 0.5);
+  color: var(--main-text-color);
+}
+
+#slide2 .carousel-caption{
+  background-color: rgba(100, 65, 164, 0.5);
+  text-align: left;
+  color: white;
+  transition: 1s;
+}
+
+#slide2 .carousel-caption:hover{
+  background-color: white;
+  color: rgb(100, 65, 164);
+}
+
+
+#slide3 .carousel-caption{
+  background-color: rgba(245, 0, 0, 0.5);
+  color: white;
+}
+
+#description{
+  border-right: 5px solid rgba(245, 0, 0, 0.5);
+  border-bottom: 8px solid rgba(185, 0, 0, 0.5);
+}
+
+#contact{
+  border-left: 5px solid rgba(245, 0, 0, 0.5);
+  border-top: 8px solid rgba(185, 0, 0, 0.5);
 }
 
 #loading-background{
@@ -94,6 +133,11 @@ p{
 
 #footer a{
   margin: 0px 15px;
+  transition: 1s;
+}
+
+#footer a:hover{
+  opacity: 0.;
 }
 
 @keyframes loading-image-spin{

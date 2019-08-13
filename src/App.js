@@ -41,7 +41,7 @@ class App extends React.Component {
 
           <MenuSelecter />
 
-          <Container id="content" fluid>
+          <div id="content">
 
             <Route exact path="/"
               render={() =>
@@ -52,7 +52,7 @@ class App extends React.Component {
             <Route path="/contact" component={Contact} />
             <Route path="/testRoom" component={Menu} />
 
-          </Container>
+          </div>
 
           <Footer />
 

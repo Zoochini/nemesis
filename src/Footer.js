@@ -15,8 +15,10 @@ function Footer() {
                     </a>
                 </Col>
             </Row>
+            <Row>
+                <br />
+            </Row>
         </Container>
-
     )
 }
 

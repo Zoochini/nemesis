@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, Carousel, Image } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Image, Jumbotron } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Accueil extends React.Component {
     constructor(props) {
@@ -55,37 +56,63 @@ class Accueil extends React.Component {
 
     render() {
         return (
-            <Row id="Accueil">
-                <Carousel>
-                    <Carousel.Item>
-                        <Image src="/nemesis-ban.svg" alt="First Slide"
-                            width={this.props.width} height={this.props.height}>
-                        </Image>
-                        <Carousel.Caption>
-                            <h3>Bienvenue</h3>
-                            <p>Au coeur des petits fours</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Image src="/twitch-logo.svg" alt="Second Slide"
-                            width={this.props.width} height={this.props.height}>
-                        </Image>
-                        <Carousel.Caption>
-                            <h3>Stream</h3>
-                            <p>Allez voir ça coûte rien</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Image src="/nemesis-logo.svg" alt="Third Slide"
-                            width={this.props.width} height={this.props.height}>
-                        </Image>
-                        <Carousel.Caption>
-                            <h3>Nous contacter</h3>
-                            <p>Parce qu'il le faut bien</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </Row>
+            <Container id="Accueil" fluid>
+                <Row id="Accueil">
+                    <Carousel>
+                        <Carousel.Item id="slide1">
+                            <Image src="/nemesis-ban.svg" alt="First Slide"
+                                width={this.props.width} height={this.props.height}>
+                            </Image>
+                            <Carousel.Caption>
+                                <h1>Bienvenue</h1>
+                                <p>Au coeur des petits fours</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item id="slide2">
+                            <Image src="/twitch-logo.svg" alt="Second Slide"
+                                width={this.props.width} height={this.props.height}>
+                            </Image>
+                            <Link to="/stream">
+                                <Carousel.Caption>
+                                    <h1>Stream</h1>
+                                    <p>Allez voir ça coûte rien</p>
+                                </Carousel.Caption>
+                            </Link>
+                        </Carousel.Item>
+                        <Carousel.Item id="slide3">
+                            <Image src="/nemesis-logo.svg" alt="Third Slide"
+                                width={this.props.width} height={this.props.height}>
+                            </Image>
+                            <Carousel.Caption>
+                                <h1>Nous contacter</h1>
+                                <p>Parce qu'il le faut bien</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    </Carousel>
+                </Row>
+                <Row>
+                    <Col lg={{ span: 4, offset: 1 }}>
+                        <Jumbotron id="description">
+                            <h2>Qui sommes-nous ?</h2>
+                            <p>Cum autem commodis intervallata temporibus convivia longa et noxia coeperint apparari vel distributio sollemnium sportularum,
+                            anxia deliberatione tractatur an exceptis his quibus vicissitudo debetur, peregrinum invitari conveniet,
+                            et si digesto plene consilio id placuerit fieri,
+                            is adhibetur qui pro domibus excubat aurigarum aut artem tesserariam profitetur aut secretiora quaedam se nosse confingit.</p>
+                        </Jumbotron>
+                    </Col>
+                    <Col></Col>
+                </Row>
+                <Row>
+                    <Col lg={{ span: 4, offset: 7 }}>
+                        <Jumbotron id="contact">
+                            <h2>Contactez nous !</h2>
+                            <p>Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum curulium eventu pendentem.
+                            haec similiaque memorabile nihil vel serium agi Romae permittunt.
+                            ergo redeundum ad textum.</p>
+                        </Jumbotron>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }
