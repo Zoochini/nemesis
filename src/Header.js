@@ -45,9 +45,6 @@ class Header extends React.Component {
                     <Nav.Item>
                         <Link to="/contact">Contact</Link>
                     </Nav.Item>
-                    <Nav.Item>
-                        <Link to="/testRoom">Test-Room</Link>
-                    </Nav.Item>
                 </Nav>
             </Navbar>
         )
