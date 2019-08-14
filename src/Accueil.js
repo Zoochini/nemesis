@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 class Accueil extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            jumbotronIsVisible: false
+        }
         this.updateMenu = this.updateMenu.bind(this);
+        this.updateJumbotron = this.updateJumbotron.bind(this);
     }
 
     componentDidMount() {
@@ -13,6 +17,7 @@ class Accueil extends React.Component {
         menu.visibility = 'hidden';
         menu.display = 'none';
         document.addEventListener("scroll", this.updateMenu);
+        document.addEventListener("scroll", this.updateJumbotron);
     }
 
     componentWillUnmount() {
@@ -20,9 +25,12 @@ class Accueil extends React.Component {
         menu.visibility = 'visible';
         menu.display = 'flex';
         document.removeEventListener("scroll", this.updateMenu);
+        if (!this.jumbotronIsVisible) {
+            document.removeEventListener("scroll", this.updateJumbotron);
+        }
     }
 
-    //Mettre à jour la visibilité du menu sur la page d'accueil du site
+    /* Mise à jour la visibilité du menu sur la page d'accueil du site */
     updateMenu() {
         let menu = document.getElementById("menu");
         if (window.scrollY !== 0 && menu.style.visibility !== 'visible') {
@@ -51,6 +59,46 @@ class Accueil extends React.Component {
                 menu.style.visibility = 'hidden';
                 menu.style.display = 'none';
             }, 500);
+        }
+    }
+
+    /* Mise à jour de l'apparition des paragraphes de la page */
+    updateJumbotron() {
+
+        //Obtention des coordonnées de l'élément à afficher
+        const jumbotrons = document.querySelectorAll('.jumbotron');
+        var rect = jumbotrons[0].getBoundingClientRect();
+
+        //Vérification de la présence de l'objet dans la vue
+        if (rect.bottom <= window.scrollY) {
+            //Définition des animations
+
+            /* Animation du jumbotron id="description" */
+            let animationDescription = [
+                { transform: 'translate(0, -200px)', opacity: '0.0' },
+                { transform: 'translate(0, 0)', opacity: '1' }
+            ];
+            /* Animation du jumbotron id="contact" */
+            let animationContact = [
+                { transform: 'translate(0, 200px)', opacity: '0.0' },
+                { transform: 'translate(0, 0)', opacity: '1' }
+            ]
+            /* Parametres de transition */
+            let transition = {
+                duration: 1000,
+                easing: 'ease-in-out',
+                iteration: 1
+            }
+            let description = document.getElementById("description");
+            let contact = document.getElementById("contact");
+
+            //Mise à jour de la visibilité et animation des jumbotrons
+            this.setState({ jumbotronIsVisible: true });
+            document.removeEventListener("scroll", this.updateJumbotron);
+            description.style.visibility = 'visible';
+            description.animate(animationDescription, transition);
+            contact.style.visibility = 'visible';
+            document.getElementById("contact").animate(animationContact, transition);
         }
     }
 
