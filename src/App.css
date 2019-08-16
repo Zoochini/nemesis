@@ -46,28 +46,32 @@ p{
   padding: 0px 15px;
 }
 
-.nav{
+#menu .nav{
   color: var(--main-text-color);
   margin-bottom: 0px;
 }
-
-.nav-item{
+  
+#menu .nav-item{
   padding: 15px 15px;
   transition: 1s;
   margin-bottom: 0px;
 }
-
-.nav-item:hover{
+  
+#menu .nav-item:hover{
   background-color: var(--main-text-color);
   color: var(--main-background-color);
 }
-
-.nav-item a{
+  
+#menu .nav-item a{
   color: var(--main-text-color);
 }
-
-.nav-item:hover a{
+  
+#menu .nav-item:hover a{
   color: var(--main-background-color);
+}
+
+#stream-selector{
+  color: var(--main-text-color);
 }
 
 .carousel{

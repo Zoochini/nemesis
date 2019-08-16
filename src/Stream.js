@@ -1,53 +1,53 @@
 import React from 'react';
-import { ResponsiveEmbed, Row, Container, Navbar, Nav } from 'react-bootstrap';
-
-const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
+import { Row, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Flux from './Flux.js';
 
 class Stream extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            targetID: 'twitch-embed',
-            width: 940,
-            height: 480,
-            channel: 'loufokalov',
-            theme: 'dark',
+            channel: this.props.match.params.id
         };
+        this.updateChannel = this.updateChannel.bind(this);
+    }
+
+    updateChannel() {
+        this.setState({ channel: this.props.match.params.id });
     }
 
     componentDidMount() {
-        // eslint-disable-next-line no-unused-vars
-        let embed;
-        const script = document.createElement('script');
-        script.setAttribute(
-            'src',
-            EMBED_URL
-        );
-        script.addEventListener('load', () => {
-            embed = new window.Twitch.Embed(this.state.targetID, { ...this.state });
-        });
-        document.body.appendChild(script);
+        this.setState({ channel: this.props.match.params.id });
+        console.log("ouais gros");
+    }
+
+    componentDidUpdate(){
     }
 
     render() {
+        console.log(this.state.channel);
         return (
             <Container fluid>
                 <Row>
-                    <Navbar>
-                        <Nav fill variant="tabs" defaultActiveKey="/nemesis-direct">
-                            <Nav.Item>
-                                <Nav.Link href="/nemesis-direct">Nemesis-direct</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="/loufokalov">Loufokalov</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                    </Navbar>
+                    <Nav id="stream-selector" fill variant="tabs" defaultActiveKey={this.state.channel}>
+                        <Nav.Item>
+                            <Link to="nemesisdirect">
+                                <Nav.Link as="div" eventKey="nemesisdirect" onClick={this.updateChannel}>
+                                    Nemesis-direct
+                                </Nav.Link>
+                            </Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Link to="loufokalov">
+                                <Nav.Link as="div" eventKey="loufokalov" onClick={this.updateChannel}>
+                                    Loufokalov
+                                </Nav.Link>
+                            </Link>
+                        </Nav.Item>
+                    </Nav>
                 </Row>
                 <Row>
-                    <ResponsiveEmbed aspectRatio="21by9"
-                        children={<div id="twitch-embed"></div>}>
-                    </ResponsiveEmbed>
+                    <Flux channel={this.props.match.params.id} />
                 </Row>
             </Container>
         )

@@ -120,7 +120,7 @@ class Accueil extends React.Component {
                             <Image src="/twitch-logo.svg" alt="Second Slide"
                                 width={this.props.width} height={this.props.height}>
                             </Image>
-                            <Link to="/stream">
+                            <Link to="/stream/nemesisdirect">
                                 <Carousel.Caption>
                                     <h1>Stream</h1>
                                     <p>Allez voir ça coûte rien</p>

@@ -66,7 +66,7 @@ class Menu extends React.Component {
                             <Link to="/">Accueil</Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="/stream">Stream</Link>
+                            <Link to="/stream/nemesisdirect">Stream</Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Link to="/contact">Contact</Link>

@@ -48,7 +48,7 @@ class App extends React.Component {
                 <Accueil width={this.state.screenWidth} height={this.state.screenHeight} />} />
 
 
-            <Route path="/stream" component={Stream} />
+            <Route path="/stream/:id" component={Stream} />
             <Route path="/contact" component={Contact} />
             <Route path="/testRoom" component={Menu} />
 

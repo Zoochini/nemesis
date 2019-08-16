@@ -26,7 +26,7 @@ class Header extends React.Component {
             <Navbar id="menu" bg="light" variant="dark" className="justify-content-center" sticky="top" expand="lg">
                 <Nav>
                     <Nav.Item>
-                        <Link to="/stream">Stream</Link>
+                        <Link to="/stream/nemesisdirect">Stream</Link>
                     </Nav.Item>
                 </Nav>
                 <Navbar.Brand>
