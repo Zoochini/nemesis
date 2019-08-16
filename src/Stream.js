@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResponsiveEmbed, Row, Container } from 'react-bootstrap';
+import { ResponsiveEmbed, Row, Container, Navbar, Nav } from 'react-bootstrap';
 
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
 
@@ -14,6 +14,7 @@ class Stream extends React.Component {
             theme: 'dark',
         };
     }
+
     componentDidMount() {
         // eslint-disable-next-line no-unused-vars
         let embed;
@@ -31,6 +32,18 @@ class Stream extends React.Component {
     render() {
         return (
             <Container fluid>
+                <Row>
+                    <Navbar>
+                        <Nav fill variant="tabs" defaultActiveKey="/nemesis-direct">
+                            <Nav.Item>
+                                <Nav.Link href="/nemesis-direct">Nemesis-direct</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="/loufokalov">Loufokalov</Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                    </Navbar>
+                </Row>
                 <Row>
                     <ResponsiveEmbed aspectRatio="21by9"
                         children={<div id="twitch-embed"></div>}>
