@@ -44,6 +44,13 @@ class Stream extends React.Component {
                                 </Nav.Link>
                             </Link>
                         </Nav.Item>
+                        <Nav.Item>
+                            <Link to="roigabydou" onClick={e => e.preventDefault()}>
+                                <Nav.Link as="div" eventKey="roigabydou" onClick={this.updateChannel}>
+                                    RoiGabydou
+                                </Nav.Link>
+                            </Link>
+                        </Nav.Item>
                     </Nav>
                 </Row>
                 <Row>
