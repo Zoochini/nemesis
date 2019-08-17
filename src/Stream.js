@@ -31,21 +31,21 @@ class Stream extends React.Component {
                 <Row>
                     <Nav id="stream-selector" fill variant="tabs" defaultActiveKey={this.state.channel}>
                         <Nav.Item>
-                            <Link to="nemesisdirect" onClick={e => e.preventDefault()}>
+                            <Link to="nemesisdirect">
                                 <Nav.Link as="div" eventKey="nemesisdirect" onClick={this.updateChannel}>
                                     Nemesis-direct
                                 </Nav.Link>
                             </Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="loufokalov" onClick={e => e.preventDefault()}>
+                            <Link to="loufokalov">
                                 <Nav.Link as="div" eventKey="loufokalov" onClick={this.updateChannel}>
                                     Loufokalov
                                 </Nav.Link>
                             </Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="roigabydou" onClick={e => e.preventDefault()}>
+                            <Link to="roigabydou">
                                 <Nav.Link as="div" eventKey="roigabydou" onClick={this.updateChannel}>
                                     RoiGabydou
                                 </Nav.Link>
