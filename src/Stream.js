@@ -13,7 +13,6 @@ class Stream extends React.Component {
     }
 
     updateChannel() {
-        if(this.state)
         this.setState({ channel: this.props.match.params.id });
     }
 
