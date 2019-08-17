@@ -13,12 +13,12 @@ class Stream extends React.Component {
     }
 
     updateChannel() {
+        if(this.state)
         this.setState({ channel: this.props.match.params.id });
     }
 
     componentDidMount() {
         this.setState({ channel: this.props.match.params.id });
-        console.log("ouais gros");
     }
 
     componentDidUpdate(){
@@ -31,14 +31,14 @@ class Stream extends React.Component {
                 <Row>
                     <Nav id="stream-selector" fill variant="tabs" defaultActiveKey={this.state.channel}>
                         <Nav.Item>
-                            <Link to="nemesisdirect">
+                            <Link to="nemesisdirect" onClick={e => e.preventDefault()}>
                                 <Nav.Link as="div" eventKey="nemesisdirect" onClick={this.updateChannel}>
                                     Nemesis-direct
                                 </Nav.Link>
                             </Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to="loufokalov">
+                            <Link to="loufokalov" onClick={e => e.preventDefault()}>
                                 <Nav.Link as="div" eventKey="loufokalov" onClick={this.updateChannel}>
                                     Loufokalov
                                 </Nav.Link>

@@ -25,9 +25,9 @@ class Header extends React.Component {
         return (
             <Navbar id="menu" bg="light" variant="dark" className="justify-content-center" sticky="top" expand="lg">
                 <Nav>
-                    <Nav.Item>
-                        <Link to="/stream/nemesisdirect">Stream</Link>
-                    </Nav.Item>
+                    <Link to="/stream/nemesisdirect">
+                        <Nav.Item>Stream</Nav.Item>
+                    </Link>
                 </Nav>
                 <Navbar.Brand>
                     <Link to="/">
@@ -42,9 +42,9 @@ class Header extends React.Component {
                     </Link>
                 </Navbar.Brand>
                 <Nav>
-                    <Nav.Item>
-                        <Link to="/contact">Contact</Link>
-                    </Nav.Item>
+                    <Link to="/contact">
+                        <Nav.Item>Contact</Nav.Item>
+                    </Link>
                 </Nav>
             </Navbar>
         )

@@ -131,10 +131,12 @@ class Accueil extends React.Component {
                             <Image src="/nemesis-logo.svg" alt="Third Slide"
                                 width={this.props.width} height={this.props.height}>
                             </Image>
-                            <Carousel.Caption>
-                                <h1>Nous contacter</h1>
-                                <p>Parce qu'il le faut bien</p>
-                            </Carousel.Caption>
+                            <Link to="/contact">
+                                <Carousel.Caption>
+                                    <h1>Nous contactez</h1>
+                                    <p>Parce qu'il le faut bien</p>
+                                </Carousel.Caption>
+                            </Link>
                         </Carousel.Item>
                     </Carousel>
                 </Row>
